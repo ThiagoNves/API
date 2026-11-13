@@ -17,3 +17,13 @@ VALUES
 ('Frango á Milanesa', 'Delicioso peito de frango à milanesa. Acompanha arroz, feijão e batata frita', 37.99),
 ('Filé à Mignon ao molho Madeira', 'Delicioso filé mignon ao molho madeira. Acompanha arroz e batata rústica', 87.99),
 ('Costela ao molho Barbecue', 'Costela de molho barbecue. Acompanha arroz e cebola à milanese', 59.99);
+
+/* BEBIDA */
+
+CREATE TABLE Bebidas (
+idBebida INT AUTO_INCREMENT PRIMARY KEY,
+nomeBebida VARCHAR(100) NOT NULL UNIQUE,
+volume VARCHAR(255) NOT NULL,
+alcoolico DECIMAL(4,2) NOT NULL,
+preco NUMERIC(6,2) NOT  NULL 
+);
