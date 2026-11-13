@@ -17,4 +17,3 @@ VALUES
 ('Frango á Milanesa', 'Delicioso peito de frango à milanesa. Acompanha arroz, feijão e batata frita', 37.99),
 ('Filé à Mignon ao molho Madeira', 'Delicioso filé mignon ao molho madeira. Acompanha arroz e batata rústica', 87.99),
 ('Costela ao molho Barbecue', 'Costela de molho barbecue. Acompanha arroz e cebola à milanese', 59.99);
-

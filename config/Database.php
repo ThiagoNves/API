@@ -27,10 +27,16 @@ $this->conexao = null;
 try {
   $this->conexao = new PDO ($dsn,$this->user,$this->pwd);
   $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Conectou!!";
-} catch (\Exception $e) {
-    echo "ERRO" . $e->getMessage();
-} 
+  //echo "Conectou!!";
+} catch (\PDOException $e) {
+    echo json_encode(["Erro" => "Não foi possível conectar ao banco de dados: " . $e->getMessage()]);
+    JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE;
+}catch (\Throwable $e) {
+    echo json_encode(["Erro" => "Ocorreu um erro genérico: " . $e->getMessage()]);
+    JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE;
+}
+
+return $this->conexao;
 
 }
 
