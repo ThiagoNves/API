@@ -39,6 +39,8 @@ float $preco
    public function getDescricao() : string {
     return $this->descricao;
    }
+
+   
    public function getPrecoFormatado() : string {
     return "R$ " . number_format($this->preco, 2, ',', '.');
    }
@@ -53,6 +55,25 @@ float $preco
     Nome do Prato: " . $this->getNomePrato() . "<br>
     Descrição: " . $this->getDescricao() . "<br>
     Preço: " . $this->getPrecoFormatado() . "<br>";
+   }
+
+
+
+     //Materia do dia 16
+   public function setNomePrato(string $pNomePrato): void{
+    //NÃO PODE SER VAZIO
+    //AO MENOS 1 CARACTER
+    if ($pNomePrato == ""){
+        throw new \Exception("O nome do prato está vazio.");
+    } else if (strlen($pNomePrato) < 3){
+        throw new \Exception("O nome do prato deve ter pelo menos 3 caracteres.");
+    }
+
+    $this->nomePrato = $pNomePrato;
+   }
+
+   public function setDescricao(string $pDescricao): void{
+    $this->descricao = $pDescricao;
    }
 
 

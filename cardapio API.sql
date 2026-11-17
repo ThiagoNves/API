@@ -18,12 +18,48 @@ VALUES
 ('Filé à Mignon ao molho Madeira', 'Delicioso filé mignon ao molho madeira. Acompanha arroz e batata rústica', 87.99),
 ('Costela ao molho Barbecue', 'Costela de molho barbecue. Acompanha arroz e cebola à milanese', 59.99);
 
+
 /* BEBIDA */
 
 CREATE TABLE Bebidas (
 idBebida INT AUTO_INCREMENT PRIMARY KEY,
-nomeBebida VARCHAR(100) NOT NULL UNIQUE,
+nomeBebida VARCHAR(100) NOT NULL,
 volume VARCHAR(255) NOT NULL,
-alcoolico DECIMAL(4,2) NOT NULL,
-preco NUMERIC(6,2) NOT  NULL 
+alcoolico BOOLEAN NOT NULL,
+preco NUMERIC(6,2) NOT  NULL,
+
+CONSTRAINT chk_alcoolico
+CHECK (alcoolico IN (0,1))
 );
+
+INSERT INTO Bebidas 
+(nomeBebida, volume, alcoolico, preco )
+VALUES 
+('Coca Cola','200 ml', '0', 4.99),
+('Suco Del Valley de Maracujá','450ml', '0', 9.99),
+('Energetico Zero', '420ml', '0', 14.99),
+('Pitú', '200ml', '1', 6.99),
+('Caipirinha de limão','350ml', '1', 12.99);
+
+SELECT * FROM Bebidas
+
+
+/* SOBREMESA */
+
+CREATE TABLE Sobremesa (
+idSobremesa INT AUTO_INCREMENT PRIMARY KEY,
+nomeSobremesa VARCHAR(100) NOT NULL,
+descricao VARCHAR(255) NOT NULL,
+preco NUMERIC(6,2) NOT  NULL
+);
+
+INSERT INTO Sobremesa 
+(nomeSobremesa, descricao, preco )
+VALUES 
+('Sorvete de Negresco','Um doce frio e saboroso em dias de extremo calor, sabor chocolate com pedaços de negresgo ', 15.99),
+('Mousse de Morango','Um delicioso Mousse feito de Morangos muito deliciosos', 20.00),
+('Bolo de chocolate', 'Uma fatia deliciosa e generosa de chocolate', 18.00);
+
+SELECT * FROM Sobremesa
+
+

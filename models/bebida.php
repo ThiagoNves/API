@@ -1,59 +1,54 @@
 <?php
-
+ 
 namespace API\Models;
-
-class Prato {
-
-private int $idPrato;
-
-private string $nomePrato;
-
-private string $descricao;
-
-private float $preco;
-
-
-private string $tabela = "pratos";
-
-//Constructor
-public function __construct(
-
-int $id,
-string $nome,
-string $descricao,
-float $preco
-
-) {
-    $this->idPrato = $id;
-    $this->nomePrato = $nome;
-    $this->descricao = $descricao;
-    $this->preco = $preco;
-
-}
-
-//Getters and Setter
-   public function getNomePrato() : string {
-    return $this->nomePrato;
-   }
-
-   public function getDescricao() : string {
-    return $this->descricao;
-   }
-   public function getPrecoFormatado() : string {
-    return "R$ " . number_format($this->preco, 2, ',', '.');
-   }
-
-    public function getIdPrato() : int {
-     return $this->idPrato;
+ 
+class Bebida {
+    private int $idBebida;
+    private string $nomeBebida;
+    private string $volume;
+    private bool $alcoolico = false;
+    private float $preco;
+    private string $tabela = "bebidas";
+ 
+    public function __construct(
+        int $id,
+        string $nome,
+        string $volume,
+        bool $alcoolico,
+        float $preco
+       
+    ) {
+        $this->idBebida = $id;
+        $this->nomeBebida = $nome;
+        $this->volume = $volume;
+        $this->alcoolico = $alcoolico;
+        $this->preco = $preco;
     }
-    
-   public function getPratoHTML() : string{
-    return  
-    "Id: " . $this->getIdPrato() . "<br>
-    Nome do Prato: " . $this->getNomePrato() . "<br>
-    Descrição: " . $this->getDescricao() . "<br>
-    Preço: " . $this->getPrecoFormatado() . "<br>";
-   }
-
-
+ 
+    public function getnomeBebida(): string {
+        return $this->nomeBebida;
+    }
+    public function getVolume(): string {
+        return $this->volume;
+    }
+    public function getAlcoolico(): bool {
+        return $this->alcoolico ? true : false;
+    }
+     public function getAlcoolicoTexto(): string {
+        return $this->alcoolico ? "Sim" : "Não";
+    }
+    public function getPrecoFormatado(): string {
+        return "R$" . number_format($this->preco, 2);
+    }
+    public function getIdBebida(): int {
+        return $this->idBebida;
+    }
+    public function getBebidaHTML() : string{
+    return "Id: " . $this->getIdBebida() . "<br>
+            Nome: " . $this->getnomeBebida() . "<br>
+            Volume: " . $this->getVolume() . "<br>
+            Alcoolico: " . $this->getAlcoolicoTexto() . "<br>
+            Preço: " . $this->getPrecoFormatado() . "<br>";
 }
+}
+ 
