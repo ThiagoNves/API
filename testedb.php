@@ -35,3 +35,14 @@ echo "<br>";
 echo $minhaBebida->getBebidaHTML();
 echo "<br>";
 echo $minhaSobremesa->getSobremesaHTML();
+ 
+echo "<br>";
+
+try {
+    echo "====Segundo Prato==== <br>";
+
+    $meuSegundoPrato = new Prato(2, "lasanha", "Deliciosa lasanha", 40.99);
+    echo $meuSegundoPrato->getPratoHTML();
+} catch (Exception $e) {
+    echo "Erro: " . $e->getMessage();
+}

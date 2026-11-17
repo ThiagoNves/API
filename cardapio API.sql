@@ -33,7 +33,7 @@ CHECK (alcoolico IN (0,1))
 );
 
 INSERT INTO Bebidas 
-(nomeBebida, volume, alcoolico, preco )
+(nomeBebida, volume, alcoolica, preco )
 VALUES 
 ('Coca Cola','200 ml', '0', 4.99),
 ('Suco Del Valley de Maracujá','450ml', '0', 9.99),
