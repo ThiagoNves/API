@@ -46,3 +46,13 @@ try {
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
 }
+
+
+try {
+    echo "====Segunda Bebida==== <br>";
+
+    $minhaSegundaBebida = new Bebida(2, "Refrigerante", "500ml", false, 5.99);
+    echo $minhaSegundaBebida->getBebidaHTML();
+} catch (Exception $e) {
+    echo "Erro: " . $e->getMessage();
+}
