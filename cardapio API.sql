@@ -62,4 +62,20 @@ VALUES
 
 SELECT * FROM Sobremesa
 
+/* MARMITA */
 
+CREATE TABLE Marmita(
+idMarmita INT AUTO_INCREMENT PRIMARY KEY,
+pratoMarmita VARCHAR (100) NOT NULL,
+precoMarmita NUMERIC (6,2) NOT NULL,
+validadeMarmita DATE NOT NULL 
+);
+
+INSERT INTO Marmita
+(pratoMarmita, precoMarmita, validadeMarmita)
+VALUES 
+('Marmita de frango empanado com Batata frita', 21.99, '2026-10-15'),
+('Feijoada com Farofa', 15.99, '2026-9-12'),
+('Empanado de frango com arroz e feijão', 27.99, '2026-8-20');
+
+SELECT * FROM Marmita
